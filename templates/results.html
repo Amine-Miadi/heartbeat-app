@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+{% block head %}{% endblock %}
+
+
+{% block body %}
+
+<h1 >{{results}}</h1>
+<br>
+<p>{{description}}</p>
+<br><br><br><br><br>
+<div>
+    <canvas id="age-chart" height = "300" width = "800"></canvas>
+</div>
+<br>
+<div>
+    <canvas id="FS-chart" height = "300" width = "800"></canvas>
+</div>
+<br>
+<div>
+    <canvas id="EPSS-chart" height = "300" width = "800"></canvas>
+</div>
+<br>
+<div>
+    <canvas id="LVDD-chart" height = "300" width = "800"></canvas>
+</div>
+<br>
+<div>
+    <canvas id="WMI-chart" height = "300" width = "800"></canvas>
+</div>
+<br>
+
+
+
+<script>
+
+    
+    var age_chart = new Chart(document.getElementById('age-chart'),
+    config = {
+      type: 'bar',
+      data: {
+        labels : {{ age_x | safe }},
+        datasets: [
+            {
+                label: "Heart attacks per age",
+                data: {{ age_y | safe }},
+                fill: false,
+                borderColor: "rgb(75,192,192)",
+                lineTention: 0.1,
+                backgroundColor: getcolor(age_y,u_age)
+            }
+        ]
+      },
+      options: {
+        scales: {
+                y: {
+                    ticks: {
+                        callback: (value,index, age_y)=>{
+                          console.log(`${value} + %`)
+                          return `${value}%`
+                        } 
+                    }
+                  }
+                }
+      }
+    }
+    );
+
+    var FS_chart = new Chart(document.getElementById('FS-chart'),
+    config = {
+      type: 'bar',
+      options: {
+        scales: {
+                y: {
+                    ticks: {
+                        callback: (value,index, age_y)=>{
+                          console.log(`${value} + %`)
+                          return `${value}%`
+                        } 
+                    }
+                  }
+                }
+      },
+      data: {
+        labels : {{ FS_x | safe }},
+        datasets: [
+            {
+                label: "fractional-shortening",
+                data: {{ FS_y | safe }},
+                fill: false,
+                borderColor: "rgb(75,192,192)",
+                lineTention: 0.1
+            }
+        ]
+      }
+    }
+    );
+
+    var EPSS_chart = new Chart(document.getElementById('EPSS-chart'),
+    config = {
+      type: 'bar',
+      options: {
+        scales: {
+                y: {
+                    ticks: {
+                        callback: (value,index, age_y)=>{
+                          console.log(`${value} + %`)
+                          return `${value}%`
+                        } 
+                    }
+                  }
+                }
+      },
+      data: {
+        labels : {{ EPSS_x | safe }},
+        datasets: [
+            {
+                label: "EPSS",
+                data: {{ EPSS_y | safe }},
+                fill: false,
+                borderColor: "rgb(75,192,192)",
+                lineTention: 0.1
+            }
+        ]
+      }
+    }
+    );
+
+    var LVDD_chart = new Chart(document.getElementById('LVDD-chart'),
+    config = {
+      type: 'bar',
+      options: {
+        scales: {
+                y: {
+                    ticks: {
+                        callback: (value,index, age_y)=>{
+                          console.log(`${value} + %`)
+                          return `${value}%`
+                        } 
+                    }
+                  }
+                }
+      },
+      data: {
+        labels : {{ LVDD_x | safe }},
+        datasets: [
+            {
+                label: "LVDD",
+                data: {{ LVDD_y | safe }},
+                fill: false,
+                borderColor: "rgb(75,192,192)",
+                lineTention: 0.1
+            }
+        ]
+      }
+    }
+    );
+
+    var WMI_chart = new Chart(document.getElementById('WMI-chart'),
+    config = {
+      type: 'bar',
+      options: {
+        scales: {
+                y: {
+                    ticks: {
+                        callback: (value,index, age_y)=>{
+                          console.log(`${value} + %`)
+                          return `${value}%`
+                        } 
+                    }
+                  }
+                }
+      },
+      data: {
+        labels : {{ WMI_x | safe }},
+        datasets: [
+            {
+                label: "WMI",
+                data: {{ WMI_y | safe }},
+                fill: false,
+                borderColor: "rgb(75,192,192)",
+                lineTention: 0.1
+            }
+        ]
+      }
+    }
+    );
+  </script>
+
+{% endblock %}

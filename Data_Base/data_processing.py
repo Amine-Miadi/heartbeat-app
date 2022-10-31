@@ -5,6 +5,7 @@ from sklearn.neighbors import LocalOutlierFactor
 import os
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+import math
 
 
 def read_and_clean_data():
@@ -92,8 +93,15 @@ def treat_data(column):
     return sorted_data
 
 #getting data for the graphs
-def get_graph_data():
+def get_graph_data(result):
+    print(len(result))
+    df.loc[len(df)]= [1,1] + result
     age = treat_data('age-at-heart-attack')
+    for i in age:
+        if i[1] != math.floor(i[1]):
+            y = list(i)
+            y[1] = math.floor(i[1])
+            i = tuple(y)
     pericardial_effusion = treat_data('pericardial-effusion')
     fractional_shortening = treat_data('fractional-shortening')
     epss = treat_data('epss')

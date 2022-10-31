@@ -5,26 +5,26 @@
 
 {% block body %}
 <div>
-    <form class="form" action="/results" method = "POST">
+    <form class="form" action="/results" method = "POST" onsubmit="required()">
       <div class="title">Data Input</div>
       <div class="subtitle">Please Fill the form</div>
       <br>
       <div class="input-container">
-        <p>ID<input id="1" class="input" type="text" name = "1"/>
+        <p>ID<input id="1" class="input" type="text" name = "1" required/>
           <br>
-        <p>Months since the heart attack<input id="3" class="input" type="text" name = "3"/>
+        <p>Months since the heart attack<input id="3" class="input" type="text" name = "3" required/>
           <br>
         <p>age<input id="4" class="input" type="text" name = "4"/>
           <br>
-        <p>pericardial-effusion<input id="5" class="input" type="text" name = "5"/>
+        <p>pericardial-effusion<input id="5" class="input" type="text" name = "5" required/>
           <br>
-        <p>fractional-shortening<input id="6" class="input" type="text" name = "6"/>
+        <p>fractional-shortening<input id="6" class="input" type="text" name = "6" required/>
           <br>
-        <p>EPSS<input id="7" class="input" type="text" name = "7"/>
+        <p>EPSS<input id="7" class="input" type="text" name = "7" required/>
           <br>
-        <p>LVDD<input id="8" class="input" type="text" name = "8"/>
+        <p>LVDD<input id="8" class="input" type="text" name = "8" required/>
           <br>
-        <p>wall-motion-index<input id="9" class="input" type="text" name = "9"/>
+        <p>wall-motion-index<input id="9" class="input" type="text" name = "9" required/>
           <br>
       <button type="text" class="submit">Submit</button>
     </form>
@@ -37,7 +37,7 @@
 
       <br><br>
       
-      
+
 
       
 

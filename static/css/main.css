@@ -117,7 +117,7 @@ background-color: #06b;
   border-radius: 20px;
   border:solid, black;
   box-sizing: border-box;
-  height: 830px;
+  height: fit-content;
   padding: 20px;
-  width: 600  px;
+  width: 600px;
 }

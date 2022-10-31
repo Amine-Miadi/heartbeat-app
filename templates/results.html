@@ -4,11 +4,12 @@
 
 
 {% block body %}
-
-<h1 >{{results}}</h1>
-<br>
-<p>{{description}}</p>
-<br><br><br><br><br>
+<div class="text">
+  <h1 >{{results}}</h1>
+  <br>
+  <p >{{description}}</p>
+</div>
+<br><br>
 <div>
     <canvas id="age-chart" height = "300" width = "800"></canvas>
 </div>
@@ -44,10 +45,9 @@
             {
                 label: "Heart attacks per age",
                 data: {{ age_y | safe }},
-                fill: false,
                 borderColor: "rgb(75,192,192)",
                 lineTention: 0.1,
-                backgroundColor: getcolor(age_y,u_age)
+                backgroundColor: {{ age_color | safe }}
             }
         ]
       },
@@ -56,7 +56,6 @@
                 y: {
                     ticks: {
                         callback: (value,index, age_y)=>{
-                          console.log(`${value} + %`)
                           return `${value}%`
                         } 
                     }
@@ -74,7 +73,6 @@
                 y: {
                     ticks: {
                         callback: (value,index, age_y)=>{
-                          console.log(`${value} + %`)
                           return `${value}%`
                         } 
                     }
@@ -89,7 +87,8 @@
                 data: {{ FS_y | safe }},
                 fill: false,
                 borderColor: "rgb(75,192,192)",
-                lineTention: 0.1
+                lineTention: 0.1,
+                backgroundColor: {{ FS_color | safe }}
             }
         ]
       }
@@ -104,7 +103,6 @@
                 y: {
                     ticks: {
                         callback: (value,index, age_y)=>{
-                          console.log(`${value} + %`)
                           return `${value}%`
                         } 
                     }
@@ -119,7 +117,8 @@
                 data: {{ EPSS_y | safe }},
                 fill: false,
                 borderColor: "rgb(75,192,192)",
-                lineTention: 0.1
+                lineTention: 0.1,
+                backgroundColor: {{ EPSS_color | safe }}
             }
         ]
       }
@@ -134,7 +133,6 @@
                 y: {
                     ticks: {
                         callback: (value,index, age_y)=>{
-                          console.log(`${value} + %`)
                           return `${value}%`
                         } 
                     }
@@ -149,7 +147,8 @@
                 data: {{ LVDD_y | safe }},
                 fill: false,
                 borderColor: "rgb(75,192,192)",
-                lineTention: 0.1
+                lineTention: 0.1,
+                backgroundColor: {{ LVDD_color | safe }}
             }
         ]
       }
@@ -164,7 +163,6 @@
                 y: {
                     ticks: {
                         callback: (value,index, age_y)=>{
-                          console.log(`${value} + %`)
                           return `${value}%`
                         } 
                     }
@@ -179,7 +177,8 @@
                 data: {{ WMI_y | safe }},
                 fill: false,
                 borderColor: "rgb(75,192,192)",
-                lineTention: 0.1
+                lineTention: 0.1,
+                backgroundColor: {{ WMI_color | safe }}
             }
         ]
       }

@@ -1,1 +1,1 @@
-results.append(float(request.form['3']))
+get

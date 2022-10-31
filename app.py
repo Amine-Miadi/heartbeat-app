@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template,request 
 from Data_Base.data_processing import predict,get_graph_data
 
 

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}{% endblock %}
+
+
+{% block body %}
+<div>
+    <form class="form" action="/results" method = "POST">
+      <div class="title">Data Input</div>
+      <div class="subtitle">Please Fill the form</div>
+      <br>
+      <div class="input-container">
+        <p>ID<input id="1" class="input" type="text" name = "1"/>
+          <br>
+        <p>Months since the heart attack<input id="3" class="input" type="text" name = "3"/>
+          <br>
+        <p>age<input id="4" class="input" type="text" name = "4"/>
+          <br>
+        <p>pericardial-effusion<input id="5" class="input" type="text" name = "5"/>
+          <br>
+        <p>fractional-shortening<input id="6" class="input" type="text" name = "6"/>
+          <br>
+        <p>EPSS<input id="7" class="input" type="text" name = "7"/>
+          <br>
+        <p>LVDD<input id="8" class="input" type="text" name = "8"/>
+          <br>
+        <p>wall-motion-index<input id="9" class="input" type="text" name = "9"/>
+          <br>
+      <button type="text" class="submit">Submit</button>
+    </form>
+    <br><br><br>
+    <br><br>
+    
+
+
+
+
+      <br><br>
+      
+      
+
+      
+
+      
+</div>
+
+
+
+{% endblock %}

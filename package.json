@@ -1,0 +1,26 @@
+{
+  "name": "heartbeat",
+  "version": "1.0.0",
+  "description": "post heart attack risk prediction",
+  "main": "app.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amine-Miadi/_Heartbeat_.git"
+  },
+  "keywords": [
+    "heart",
+    "attack",
+    "predition",
+    "heat",
+    "failure"
+  ],
+  "author": "Amine Miadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amine-Miadi/_Heartbeat_/issues"
+  },
+  "homepage": "https://github.com/Amine-Miadi/_Heartbeat_#readme"
+}
